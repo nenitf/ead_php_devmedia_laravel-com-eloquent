@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+ * Método       Url                     Action      Nome da Rota
+ *--------------------------------------------------------------
+ * GET          /imoveis                index       imoveis.index
+ * GET          /imoveis/create         create      imoveis.create
+ * POST         /imoveis                store       imoveis.store
+ * GET          /imoveis/{id}           show        imoveis.show
+ * GET          /imoveis/{id}/edit      edit        imoveis.edit
+ * PUT/PATCH    /imoveis/{id}           update      imoveis.update
+ * DELETE       /imoveis{id}            destroy     imoveis.destroy
+ */
+Route::resource('imoveis', 'ImovelController');

@@ -3,3 +3,4 @@ psql -U postgres -d ead_php_devmedia_laravel-com-eloquent # 12345
 php artisan make:model Imovel -m
 php artisan migrate
 php artisan make:controller ImovelController --resource
+php artisan serve
