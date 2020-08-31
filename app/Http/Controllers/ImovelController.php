@@ -4,10 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Validator;
+
 use App\Imovel;
 
 class ImovelController extends Controller
 {
+    protected function validarImovel($request){
+        $validator = Validator::make($request->all(), [
+            "descricao" => "required",
+            "logradouroEndereco"=> "required",
+            "bairroEndereco" => "required",
+            "numeroEndereco" => "required | numeric",
+            "cepEndereco" => "required",
+            "cidadeEndereco" => "required",
+            "preco" => "required | numeric",
+            "qtdQuartos" => "required | numeric ",
+            "tipo" => "required",
+            "finalidade" => "required"
+        ]);
+        return $validator;
+    }
+
     /**
      * Lista todos imóveis
      *
@@ -30,12 +48,21 @@ class ImovelController extends Controller
 
     /**
      * Salva o formulário enviado a partir de create()
+     * https://laravel.com/docs/7.x/validation#manually-creating-validators
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+        $validator = $this->validarImovel($request);
+        if($validator->fails()){
+            // return redirect()->back()->withErrors($validator->errors());
+            // https://laravel.com/docs/7.x/redirects#creating-redirects
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }
         $dados = $request->all();
         Imovel::create($dados);
         return redirect()->route('imoveis.index');
