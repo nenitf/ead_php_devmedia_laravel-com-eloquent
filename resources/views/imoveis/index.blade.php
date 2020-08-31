@@ -37,7 +37,7 @@
                                 <td>{{$imovel->tipo}}</td>
                                 <td>
                                     <a href="{{route('imoveis.edit', $imovel->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
-                                    <a href="{{route('imoveis.remove', $imovel->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
+                                    <a href="{{route('imoveis.destroy', $imovel->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
                                     <a href="{{route('imoveis.show', $imovel->id)}}"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                 </td>
                             </tr>
