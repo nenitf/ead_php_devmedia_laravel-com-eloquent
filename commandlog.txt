@@ -4,3 +4,6 @@ php artisan make:model Imovel -m
 php artisan migrate
 php artisan make:controller ImovelController --resource
 php artisan serve
+php artisan make:seeder ImoveisTableSeeder
+php artisan make:factory ImovelFactory --model=Imovel
+php artisan migrate --seed
