@@ -39,9 +39,9 @@
                             <div class="form-group">
                                 <label for="tipo">Tipo do imóvel</label>
                                 <select class="form-control" name="tipo" value="{{$imovel->tipo}}" required>
-                                    <option {{($imovel->tipo == 'apartamento'  ? 'selected' : '')}}>Apartamento</option>
-                                    <option {{($imovel->tipo == 'casa'  ? 'selected' : '')}}>Casa</option>
-                                    <option {{($imovel->tipo == 'kitnet'  ? 'selected' : '')}}>Kitnet</option>
+                                    <option value="apartamento" {{($imovel->tipo == 'apartamento'  ? 'selected' : '')}}>Apartamento</option>
+                                    <option value="casa" {{($imovel->tipo == 'casa'  ? 'selected' : '')}}>Casa</option>
+                                    <option value="kitnet" {{($imovel->tipo == 'kitnet'  ? 'selected' : '')}}>Kitnet</option>
                                 </select>
                             </div>
                         </div>
@@ -49,8 +49,8 @@
                             <div class="form-group">
                                 <label for="qtdQuartos">Finalidade do imóvel</label>
                                 <select class="form-control" name="finalidade" required>
-                                    <option {{($imovel->finalidade == 'venda'  ? 'selected' : '')}}>Venda</option>
-                                    <option {{($imovel->finalidade == 'locação'  ? 'selected' : '')}}>Locação</option>
+                                    <option value="venda" {{($imovel->finalidade == 'venda'  ? 'selected' : '')}}>Venda</option>
+                                    <option value="locação" {{($imovel->finalidade == 'locação'  ? 'selected' : '')}}>Locação</option>
                                 </select>
                             </div>
                         </div>

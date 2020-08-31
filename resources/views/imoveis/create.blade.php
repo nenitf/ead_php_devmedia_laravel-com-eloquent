@@ -58,9 +58,9 @@
                     <div class="form-group">
                         <label for="tipo">Tipo do imóvel</label>
                         <select class="form-control" name="tipo" required>
-                            <option {{old('tipo')=='apartamento'?'selected':''}}>apartamento</option>
-                            <option {{old('tipo')=='casa'?'selected':''}}>casa</option>
-                            <option {{old('tipo')=='kitnet'?'selected':''}}>kitnet</option>
+                            <option value="apartamento" {{old('tipo')=='apartamento'?'selected':''}}>Apartamento</option>
+                            <option value="casa" {{old('tipo')=='casa'?'selected':''}}>Casa</option>
+                            <option value="kitnet" {{old('tipo')=='kitnet'?'selected':''}}>Kitnet</option>
                         </select>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
                     <div class="form-group">
                         <label for="qtdQuartos">Finalidade do imóvel</label>
                         <select class="form-control" name="finalidade" required>
-                            <option {{old('finalidade')=='venda'?'selected':''}}>venda</option>
-                            <option {{old('finalidade')=='locação'?'selected':''}}>locação</option>
+                            <option value="venda" {{old('finalidade')=='venda'?'selected':''}}>Venda</option>
+                            <option value="locação" {{old('finalidade')=='locação'?'selected':''}}>Locação</option>
                         </select>
                     </div>
                 </div>
