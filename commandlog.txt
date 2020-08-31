@@ -1,0 +1,4 @@
+createdb -U postgres ead_php_devmedia_laravel-com-eloquent # 123456
+psql -U postgres -d ead_php_devmedia_laravel-com-eloquent # 123456
+php artisan make:model Imovel -m
+php artisan migrate
