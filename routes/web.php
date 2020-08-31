@@ -29,3 +29,4 @@ Route::get('/', function () {
  * DELETE       /imoveis{id}            destroy     imoveis.destroy
  */
 Route::resource('imoveis', 'ImovelController');
+Route::get('/imoveis/remove/{id}', 'ImovelController@remover')->name('imoveis.remove');

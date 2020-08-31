@@ -116,6 +116,17 @@ class ImovelController extends Controller
     }
 
     /**
+     * Confirmação da exclusão
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function remover($id)
+    {
+        $imovel = Imovel::find($id);
+        return view('imoveis.remove', compact('imovel'));
+    }
+
+    /**
      * Deleta imóvel
      *
      * @param  int  $id
