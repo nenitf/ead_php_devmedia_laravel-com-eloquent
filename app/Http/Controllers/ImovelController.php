@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 use App\Imovel;
 
@@ -29,11 +31,18 @@ class ImovelController extends Controller
     /**
      * Lista todos imóveis
      *
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $imoveis = Imovel::all();
+        $qtd = $request['qtd'] ?? 5;
+        $page = $request['page'] ?? 1;
+        Paginator::currentPageResolver(function () use ($page){
+            return $page;
+        });
+        $imoveis = DB::table('imoveis')->paginate($qtd);
+        $imoveis = $imoveis->appends(Request::capture()->except('page'));
         return view('imoveis.index', compact('imoveis'));
     }
 

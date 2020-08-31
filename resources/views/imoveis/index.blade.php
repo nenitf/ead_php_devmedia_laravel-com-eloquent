@@ -46,6 +46,9 @@
                 </table>
             </div>
         </div>
+        <div align="center" class="row">
+            {{ $imoveis->links() }}
+        </div>
     </div>
     <a href="{{route('imoveis.create')}}"><button class="btn btn-primary">Adicionar</button></a>
 @endsection
