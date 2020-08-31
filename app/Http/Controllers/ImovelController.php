@@ -89,7 +89,8 @@ class ImovelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $imovel = Imovel::find($id);
+        return view('imoveis.edit', compact('imovel'));
     }
 
     /**
