@@ -134,6 +134,7 @@ class ImovelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Imovel::find($id)->delete();
+        return redirect()->route('imoveis.index');
     }
 }
